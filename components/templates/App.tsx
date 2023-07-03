@@ -12,7 +12,7 @@ const App = () => {
       <RecoilRoot>
         <nav>
           <Link href="/">Home</Link>
-          <Link href="/favorites">Favorites</Link>
+          <Link href="/">Favorites</Link>
         </nav>
         <HomePage />
       </RecoilRoot>
