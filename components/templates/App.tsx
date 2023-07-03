@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from '@apollo/client';
 import { RecoilRoot } from 'recoil';
 import Link from 'next/link';
-import HomePage from '../organisms/HomePage';
+
 import client from '../../apollo/client';
+
+import HomePage from '../organisms/HomePage';
 
 const App = () => {
   return (
