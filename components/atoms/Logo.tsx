@@ -9,6 +9,7 @@ export const Logo = () => {
         alt='SpaceX logo'
         width={229}
         height={42}
+        priority
       />
     </Link>
   )
