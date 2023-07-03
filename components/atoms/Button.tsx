@@ -19,7 +19,6 @@ const StyledButton = styled.button`
 const StyledPrimaryButton = styled(StyledButton)`
   padding: 12px 24px;
   background-color: #D3EAFF;
-  border: 2px solid #D3EAFF;
   transition: background-color 0.2s ease-in;
    
   &:hover {
@@ -30,7 +29,6 @@ const StyledPrimaryButton = styled(StyledButton)`
 const StyledSecondaryButton = styled(StyledButton)`
   padding: 12px;
   background-color: #fff;
-  border: 2px solid #D3EAFF;
   transition: background-color 0.2s ease-in;
 
   &:hover {
