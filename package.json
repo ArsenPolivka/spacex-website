@@ -6,8 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.16",
+    "graphql": "^16.7.1",
     "next": "latest",
+    "next-plugin-graphql": "^0.0.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "recoil": "^0.7.7"
   }
 }
