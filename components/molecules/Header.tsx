@@ -10,12 +10,20 @@ import styled from 'styled-components';
 
 const StyledButtonsDiv = styled.div`
   display: flex;
-  gap: 8px;
+  gap: 12px;
+`;
+
+const StyledHeader = styled.header`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(30, 30, 30, 0.48);
+  padding: 14px 80px;
 `;
 
 export const Header = () => {
   return (
-    <>
+    <StyledHeader>
       <Logo />
       <Navigation />
       <StyledButtonsDiv>
@@ -32,6 +40,6 @@ export const Header = () => {
           Sign in
         </Button>
       </StyledButtonsDiv>
-    </>
+    </StyledHeader>
   )
 }
