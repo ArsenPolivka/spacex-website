@@ -6,7 +6,10 @@ export const Slider = () => {
     <>
       <span>The space is waiting for</span>
       <span>You</span>
-      <SwitcherButton />
+      <SwitcherButton
+        onClick={() => console.log("clicked")}
+        isActive
+      />
       <ArrowButton />
     </>
   )
