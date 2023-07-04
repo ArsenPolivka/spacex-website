@@ -17,7 +17,7 @@ const StyledWrapperDiv = styled.div`
 const StyledImageDiv = styled.div`
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 661px;
 `;
 
 const StyledImage = styled.img`
