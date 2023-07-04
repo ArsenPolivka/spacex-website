@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import {Button} from "./Button";
+
+import { Button } from "./Button";
+
 import HeartIcon from "../icons/HeartIcon";
 
 const StyledCardWrapper = styled.div`
