@@ -5,7 +5,6 @@ const StyledLogo = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  mix-blend-mode: difference;
 `;
 
 export const Logo = () => {
@@ -14,8 +13,6 @@ export const Logo = () => {
       <img
         src='/images/logo.png'
         alt='SpaceX logo'
-        width={229}
-        height={42}
       />
     </StyledLogo>
   )
