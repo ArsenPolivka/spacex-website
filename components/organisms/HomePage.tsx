@@ -8,7 +8,6 @@ const HomePage = () => {
     <div>
       <Header />
       <Slider />
-      <p>This is Home Page</p>
     </div>
   );
 };

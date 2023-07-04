@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from "next/link";
 import styled from "styled-components";
 
@@ -11,12 +10,9 @@ const StyledLogo = styled(Link)`
 export const Logo = () => {
   return (
     <StyledLogo href="/">
-      <Image
+      <img
         src='/images/logo.png'
         alt='SpaceX logo'
-        width={229}
-        height={42}
-        priority
       />
     </StyledLogo>
   )

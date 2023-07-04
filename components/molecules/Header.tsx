@@ -18,6 +18,9 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   background-color: rgba(30, 30, 30, 0.48);
   padding: 14px 80px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 `;
 
 export const Header = () => {
