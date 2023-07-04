@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
 import { atom, useRecoilState } from "recoil";
+
 import { SwitcherButton } from "../atoms/SwitcherButton";
 import { ArrowButton } from "../atoms/ArrowButton";
 

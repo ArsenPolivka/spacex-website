@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import { RecoilRoot } from "recoil";
 
 import HomePage from "../components/organisms/HomePage";
-import {RecoilRoot} from "recoil";
 
 const GlobalStyle = createGlobalStyle`
   html,
