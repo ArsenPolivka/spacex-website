@@ -12,6 +12,7 @@ const StyledWrapperDiv = styled.div`
   position: relative;
   height: 100%;
   margin-top: -80px;
+  margin-bottom: 80px;
 `;
 
 const StyledImageDiv = styled.div`
