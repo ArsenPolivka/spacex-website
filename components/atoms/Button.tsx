@@ -19,7 +19,18 @@ const StyledPrimaryButton = styled(StyledButton)`
   padding: 12px 24px;
   background-color: #D3EAFF;
   transition: background-color 0.2s ease-in;
+  width: 100%;
    
+  &:hover {
+    background-color: #fff;
+  }
+`;
+
+const StylesTertiaryButton = styled(StyledButton)`
+  padding: 12px;
+  background-color: #ECECEC;
+  transition: background-color 0.2s ease-in;
+
   &:hover {
     background-color: #fff;
   }
@@ -43,10 +54,11 @@ const IconWrapper = styled.div`
 type ButtonProps = {
   children?: React.ReactNode;
   type?: "button" | "submit" | "reset";
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "tertiary";
   onClick?: () => void;
   disabled?: boolean;
   icon?: React.ReactNode;
+  wide?: boolean;
 };
 
 export const Button = ({
@@ -55,7 +67,8 @@ export const Button = ({
   variant,
   disabled,
   onClick,
-  icon
+  icon,
+  wide
 }: ButtonProps) => {
   if (variant === "primary") {
     return (
@@ -82,6 +95,19 @@ export const Button = ({
         { icon && <IconWrapper>{icon}</IconWrapper> }
         { children }
       </StyledSecondaryButton>
+    )
+  }
+
+  if (variant === "tertiary") {
+    return (
+      <StylesTertiaryButton
+        type={type}
+        disabled={disabled}
+        onClick={onClick}
+      >
+        { icon && <IconWrapper>{icon}</IconWrapper> }
+        { children }
+      </StylesTertiaryButton>
     )
   }
 }
