@@ -1,12 +1,11 @@
 import React from "react";
+import styled from 'styled-components';
 
 import { Logo } from "../atoms/Logo";
 import { Navigation } from "../atoms/Navigation";
 import { Button } from "../atoms/Button";
-import HeartIcon from "../atoms/HeartIcon";
 
-import styled from 'styled-components';
-
+import HeartIcon from "../icons/HeartIcon";
 
 const StyledButtonsDiv = styled.div`
   display: flex;
@@ -30,7 +29,7 @@ export const Header = () => {
         <Button
           type='button'
           variant="secondary"
-          icon={<HeartIcon />}
+          icon={<HeartIcon color="black"/>}
         />
 
         <Button

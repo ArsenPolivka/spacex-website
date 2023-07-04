@@ -10,7 +10,7 @@ export const Slider = () => {
         onClick={() => console.log("clicked")}
         isActive
       />
-      <ArrowButton />
+      <ArrowButton href="/" />
     </>
   )
 }
