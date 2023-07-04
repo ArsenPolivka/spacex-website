@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const StyledActiveDiv = styled.div`
-  background-color: #000;
+  background-color: #fff;
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -12,18 +12,14 @@ const StyledWrapper = styled.button`
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 1px solid #000;
+  border: 1px solid #fff;
   padding: 5px;
   background-color: transparent;
   cursor: pointer;
   transition: background-color 0.1s ease-in;
 
   &:hover {
-    background-color: #f1f1f1;
-    
-    ${StyledActiveDiv} {
-      background-color: #424242;
-    }
+    background-color: #ffffff;
   }
 `;
 

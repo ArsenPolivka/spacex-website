@@ -7,6 +7,7 @@ import Link from 'next/link';
 import client from '../../apollo/client';
 
 import HomePage from '../organisms/HomePage';
+import {Slider} from "../molecules/Slider";
 
 const App = () => {
   return (

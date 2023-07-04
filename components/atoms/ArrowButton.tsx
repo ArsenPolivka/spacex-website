@@ -9,11 +9,11 @@ const StyledLink = styled.a`
 `;
 
 const StyledText = styled.span`
-  color: #000;
+  color: #fff;
   text-align: center;
   font-size: 32px;
   font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-weight: 200;
   line-height: normal;
   margin-right: 8px;
 `;
@@ -28,7 +28,7 @@ export const ArrowButton = ({ href }:ArrowButtonProps) => {
       <StyledText>
         Explore tours
       </StyledText>
-      <ArrowIcon color="black"/>
+      <ArrowIcon color="white"/>
     </StyledLink>
   )
 }

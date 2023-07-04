@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 import HomePage from "../components/organisms/HomePage";
+import {RecoilRoot} from "recoil";
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -25,9 +26,9 @@ const GlobalStyle = createGlobalStyle`
 
 export default function Home() {
   return (
-    <>
+    <RecoilRoot>
       <GlobalStyle />
       <HomePage />
-    </>
+    </RecoilRoot>
   )
 }
