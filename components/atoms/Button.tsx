@@ -66,6 +66,10 @@ const StylesTertiaryButton = styled(StyledButton)`
 const StyledSecondaryActiveButton = styled(StyledSecondaryButton)`
   ${secondaryButtonStyles};
   background-color: #DD377D;
+
+  &:hover {
+    background-color: #dc6a9d;
+  }
 `;
 
 const IconWrapper = styled.div`
