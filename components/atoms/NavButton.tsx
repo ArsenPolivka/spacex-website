@@ -31,7 +31,10 @@ type NavButtonProps = {
   to: string;
 }
 
-export const NavButton = ({ children, to }: NavButtonProps) => {
+export const NavButton = ({
+  children,
+  to,
+}: NavButtonProps) => {
   return (
     <StyledNavButton href={to}>
       { children }

@@ -63,6 +63,11 @@ const StylesTertiaryButton = styled(StyledButton)`
   ${tertiaryButtonStyles}
 `;
 
+const StyledSecondaryActiveButton = styled(StyledSecondaryButton)`
+  ${secondaryButtonStyles};
+  background-color: #DD377D;
+`;
+
 const IconWrapper = styled.div`
   width: 24px;
   height: 24px;
@@ -71,7 +76,7 @@ const IconWrapper = styled.div`
 type ButtonProps = {
   children?: React.ReactNode;
   type?: "button" | "submit" | "reset";
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: "primary" | "secondary" | "tertiary" | "secondaryActive";
   onClick?: () => void;
   disabled?: boolean;
   icon?: React.ReactNode;
@@ -86,7 +91,7 @@ export const Button = ({
   onClick,
   icon,
   href,
-}: ButtonProps) => {
+  }: ButtonProps) => {
   const getButtonStyle = () => {
     switch (variant) {
       case "primary":
@@ -95,6 +100,8 @@ export const Button = ({
         return StyledSecondaryButton;
       case "tertiary":
         return StylesTertiaryButton;
+      case "secondaryActive":
+        return StyledSecondaryActiveButton;
       default:
         return StyledButton;
     }
