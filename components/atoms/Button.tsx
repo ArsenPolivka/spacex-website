@@ -12,45 +12,55 @@ const baseButtonStyles = css`
   cursor: pointer;
 `;
 
-const StyledButton = styled.button`
-  ${baseButtonStyles}
-`;
-
-const StyledPrimaryButton = styled(StyledButton)`
+const primaryButtonStyles = css`
   padding: 12px 24px;
   background-color: #D3EAFF;
   transition: background-color 0.2s ease-in;
   border: 2px solid #D3EAFF;
   width: 100%;
-   
+
   &:hover {
     background-color: transparent;
   }
 `;
 
-const StyledSecondaryButton = styled(StyledButton)`
+const secondaryButtonStyles = css`
   padding: 12px;
   background-color: #fff;
   transition: background-color 0.2s ease-in;
   width: 100%;
   height: 100%;
-  
 
   &:hover {
     background-color: #D3EAFF;
   }
 `;
 
-const StylesTertiaryButton = styled(StyledButton)`
+const tertiaryButtonStyles = css`
   padding: 12px;
   background-color: #ECECEC;
   transition: background-color 0.2s ease-in;
   border: 2px solid #ECECEC;
-  
 
   &:hover {
     background-color: transparent;
   }
+`;
+
+const StyledButton = styled.button`
+  ${baseButtonStyles}
+`;
+
+const StyledPrimaryButton = styled(StyledButton)`
+  ${primaryButtonStyles}
+`;
+
+const StyledSecondaryButton = styled(StyledButton)`
+  ${secondaryButtonStyles}
+`;
+
+const StylesTertiaryButton = styled(StyledButton)`
+  ${tertiaryButtonStyles}
 `;
 
 const IconWrapper = styled.div`
@@ -77,96 +87,42 @@ export const Button = ({
   icon,
   href,
 }: ButtonProps) => {
+  const getButtonStyle = () => {
+    switch (variant) {
+      case "primary":
+        return StyledPrimaryButton;
+      case "secondary":
+        return StyledSecondaryButton;
+      case "tertiary":
+        return StylesTertiaryButton;
+      default:
+        return StyledButton;
+    }
+  };
+
   if (href) {
-    if (variant === "primary") {
-      return (
-        <Link href={href} passHref legacyBehavior>
-          <a>
-            <StyledPrimaryButton
-              type={type}
-              disabled={disabled}
-              onClick={onClick}
-            >
-              { icon && <IconWrapper>{icon}</IconWrapper> }
-              { children }
-            </StyledPrimaryButton>
-          </a>
-        </Link>
-      )
-    }
+    const ButtonStyle = getButtonStyle();
 
-    if (variant === "secondary") {
-      return (
-        <Link href={href} passHref legacyBehavior>
-          <a>
-            <StyledSecondaryButton
-              type={type}
-              disabled={disabled}
-              onClick={onClick}
-            >
-              { icon && <IconWrapper>{icon}</IconWrapper> }
-              { children }
-            </StyledSecondaryButton>
-          </a>
-        </Link>
-      )
-    }
-
-    if (variant === "tertiary") {
-      return (
-        <Link href={href} passHref legacyBehavior>
-          <a>
-            <StylesTertiaryButton
-              type={type}
-              disabled={disabled}
-              onClick={onClick}
-            >
-              { icon && <IconWrapper>{icon}</IconWrapper> }
-              { children }
-            </StylesTertiaryButton>
-          </a>
-        </Link>
-      )
-    }
-  }
-  if (variant === "primary") {
     return (
-      <>
-        <StyledPrimaryButton
+      <Link href={href} passHref>
+        <ButtonStyle
           type={type}
           disabled={disabled}
           onClick={onClick}
         >
-          { icon && <IconWrapper>{icon}</IconWrapper> }
-          { children }
-        </StyledPrimaryButton>
-      </>
-    )
+          {icon && <IconWrapper>{icon}</IconWrapper>}
+          {children}
+        </ButtonStyle>
+      </Link>
+    );
   }
 
-  if (variant === "secondary") {
-    return (
-      <StyledSecondaryButton
-        type={type}
-        disabled={disabled}
-        onClick={onClick}
-      >
-        { icon && <IconWrapper>{icon}</IconWrapper> }
-        { children }
-      </StyledSecondaryButton>
-    )
-  }
+  const ButtonStyle = getButtonStyle();
 
-  if (variant === "tertiary") {
-    return (
-      <StylesTertiaryButton
-        type={type}
-        disabled={disabled}
-        onClick={onClick}
-      >
-        { icon && <IconWrapper>{icon}</IconWrapper> }
-        { children }
-      </StylesTertiaryButton>
-    )
-  }
-}
+  return (
+    <ButtonStyle type={type} disabled={disabled} onClick={onClick}>
+      {icon && <IconWrapper>{icon}</IconWrapper>}
+      {children}
+    </ButtonStyle>
+  );
+};
