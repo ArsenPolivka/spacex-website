@@ -33,6 +33,7 @@ export const Header = () => {
           type='button'
           variant="secondary"
           icon={<HeartIcon color="black"/>}
+          href="/favorites"
         />
 
         <Button

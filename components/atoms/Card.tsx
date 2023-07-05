@@ -1,12 +1,17 @@
 import styled from "styled-components";
+import { useRecoilState } from "recoil";
+
+import { favoriteToursState } from '../../recoil/atoms';
 
 import { Button } from "./Button";
 
 import HeartIcon from "../icons/HeartIcon";
 
 const StyledCardWrapper = styled.div`
-  width: 411px;
-  height: 572px;
+  display: flex;
+  flex-direction: column;
+  max-width: 411px;
+  height: 830px;
   border: 1px solid #D3EAFF;
 `;
 
@@ -15,7 +20,10 @@ const StyledImage = styled.img`
 `;
 
 const StyledContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   padding: 32px;
+  flex: 1;
 `;
 
 const StyledDescriptionWrapper = styled.div`
@@ -48,24 +56,31 @@ const StyledButtons = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 16px;
+  margin-top: auto;
 `;
 
-export const Card = () => {
+export const Card = ({ rocket, img }) => {
+  const [favoriteTours, setFavoriteTours] = useRecoilState(favoriteToursState);
+
+  const addToFavorites = () => {
+    setFavoriteTours([...favoriteTours, rocket]);
+  };
+
   return (
     <StyledCardWrapper>
-      <StyledImage src="/images/card1.png" alt="card1"/>
+      <StyledImage src={img} alt="card1"/>
       <StyledContentWrapper>
         <StyledDescriptionWrapper>
-          <StyledTitle>extraordinary tour</StyledTitle>
+          <StyledTitle>{rocket.name}</StyledTitle>
 
-          <StyledDescription>Lorem ipsum dolor sit amet consectetur adipiscing elit</StyledDescription>
+          <StyledDescription>{rocket.description}</StyledDescription>
         </StyledDescriptionWrapper>
 
         <StyledButtons>
-          <Button variant="primary" wide>
+          <Button variant="primary">
             Buy
           </Button>
-          <Button variant="tertiary" icon={ <HeartIcon  color="black" /> } />
+          <Button variant="tertiary" icon={ <HeartIcon  color="black" /> } onClick={addToFavorites}/>
         </StyledButtons>
       </StyledContentWrapper>
     </StyledCardWrapper>
