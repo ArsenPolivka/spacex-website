@@ -11,7 +11,7 @@ export const Navigation = () => {
   return (
     <StyledNavbar>
       <NavButton to="/">Home</NavButton>
-      <NavButton to="/">Tours</NavButton>
+      <NavButton to="#tours">Tours</NavButton>
       <NavButton to="/">About</NavButton>
       <NavButton to="/">Help</NavButton>
     </StyledNavbar>

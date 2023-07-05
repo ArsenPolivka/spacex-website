@@ -11,8 +11,7 @@ const StyledWrapperDiv = styled.div`
   align-items: center;
   position: relative;
   height: 100%;
-  margin-top: -80px;
-  margin-bottom: 80px;
+  margin-top: -83px;
 `;
 
 const StyledImageDiv = styled.div`
@@ -23,7 +22,9 @@ const StyledImageDiv = styled.div`
 
 const StyledImage = styled.img`
   width: 100%;
+  height: 100%;
   object-fit: cover;
+  max-width: 100%;
 `;
 
 const StyledSwitchBar = styled.div`
@@ -43,6 +44,12 @@ const StyledTextWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-left: 43px;
+  max-width: 100%;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 `;
 
 const StyledArrowButtonWrapper = styled.div`
@@ -60,6 +67,7 @@ const StyledDivWrapper = styled.div`
   flex-direction: column;
   gap: 58px;
   margin-top: 43px;
+  width: 100%;
 `;
 
 const currentImageState = atom({
@@ -107,7 +115,7 @@ export const Slider = () => {
           </div>
 
           <StyledArrowButtonWrapper>
-            <ArrowButton href='#' />
+            <ArrowButton href='#tours' />
           </StyledArrowButtonWrapper>
         </StyledDivWrapper>
       </StyledImageDiv>
