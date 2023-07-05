@@ -4,7 +4,6 @@ import { Header } from "../molecules/Header";
 import { Slider } from "../molecules/Slider";
 import { Tours } from "../molecules/Tours";
 
-
 const HomePage = () => {
   return (
     <>

@@ -29,6 +29,11 @@ const StyledClearAllButton = styled.button`
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  transition: color 0.1s ease-in;
+
+  &:hover {
+    color: #b0b0b0;
+  }
 `;
 
 const StyledContentWrapper = styled.div`
@@ -60,6 +65,7 @@ export const Favorites = () => {
         >
           Clear all
         </StyledClearAllButton>
+
         { favoriteTours.length !== 0 ? (
           favoriteTours.length > 2 ? (
               <StyledCardList>
@@ -86,7 +92,7 @@ export const Favorites = () => {
             )
         ) : (
           <StyledWarning>
-            Favorites list is empty...
+            Favourites list is empty...
           </StyledWarning>
         )}
       </StyledContentWrapper>

@@ -6,9 +6,7 @@ const baseButtonStyles = css`
   border: 0;
   font-size: 24px;
   font-family: 'Syne', sans-serif;
-  font-style: normal;
   font-weight: 600;
-  line-height: normal;
   cursor: pointer;
 `;
 
@@ -20,7 +18,7 @@ const primaryButtonStyles = css`
   width: 100%;
 
   &:hover {
-    background-color: transparent;
+    background-color: #fff;
   }
 `;
 
@@ -115,7 +113,10 @@ export const Button = ({
     const ButtonStyle = getButtonStyle();
 
     return (
-      <Link href={href} passHref>
+      <Link
+        href={href}
+        passHref
+      >
         <ButtonStyle
           type={type}
           disabled={disabled}
@@ -131,7 +132,11 @@ export const Button = ({
   const ButtonStyle = getButtonStyle();
 
   return (
-    <ButtonStyle type={type} disabled={disabled} onClick={onClick}>
+    <ButtonStyle
+      type={type}
+      disabled={disabled}
+      onClick={onClick}
+    >
       {icon && <IconWrapper>{icon}</IconWrapper>}
       {children}
     </ButtonStyle>

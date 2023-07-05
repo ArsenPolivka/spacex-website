@@ -13,7 +13,7 @@ const StyledCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 411px;
-  height: 830px;
+  height: 840px;
   border: 1px solid #D3EAFF;
 `;
 
@@ -37,9 +37,7 @@ const StyledTitle = styled.h3`
   text-align: center;
   font-size: 24px;
   font-family: 'Syne', sans-serif;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   text-transform: uppercase;
   margin-bottom: 16px;
 `;
@@ -49,8 +47,6 @@ const StyledDescription = styled.p`
   text-align: center;
   font-size: 24px;
   font-family: 'Lato', sans-serif;
-  font-style: normal;
-  font-weight: 300;
   line-height: normal;
 `;
 
@@ -77,6 +73,7 @@ export const Card = ({
   const notifyError = () => toast.error('This tour is already in favorites!', {
     position: 'top-right'
   });
+
   const notifySuccess = () => toast.success('Tour was added in Favorites successfully!', {
     position: 'top-right'
   });
@@ -96,12 +93,19 @@ export const Card = ({
 
   return (
     <StyledCardWrapper>
-      <StyledImage src={img} alt="card1"/>
+      <StyledImage
+        src={img}
+        alt="card1"
+      />
       <StyledContentWrapper>
         <StyledDescriptionWrapper>
-          <StyledTitle>{rocket.name}</StyledTitle>
+          <StyledTitle>
+            {rocket.name}
+          </StyledTitle>
 
-          <StyledDescription>{rocket.description}</StyledDescription>
+          <StyledDescription>
+            {rocket.description}
+          </StyledDescription>
         </StyledDescriptionWrapper>
 
         <StyledButtons>

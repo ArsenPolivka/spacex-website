@@ -47,11 +47,11 @@ const StyledTextWrapper = styled.div`
   align-items: center;
   margin-left: 43px;
   max-width: 100%;
+`;
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+const StyledImg = styled.img`
+  max-width: 100%;
+  height: auto;
 `;
 
 const StyledArrowButtonWrapper = styled.div`
@@ -80,7 +80,7 @@ export const Slider = () => {
   };
 
   return (
-    <StyledWrapperDiv>
+    <StyledWrapperDiv id="top">
       <StyledImageDiv>
         <StyledImage
           src={`/images/${currentImage}.png`}
@@ -90,7 +90,10 @@ export const Slider = () => {
         <StyledDivWrapper>
           <div>
             <StyledTextWrapper>
-              <img src="/images/text.png" alt="main text"/>
+              <StyledImg
+                src="/images/text.png"
+                alt="main text"
+              />
             </StyledTextWrapper>
 
             <StyledSwitchBar>

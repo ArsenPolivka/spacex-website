@@ -10,10 +10,37 @@ const StyledNavbar = styled.nav`
 export const Navigation = () => {
   return (
     <StyledNavbar>
-      <NavButton to="/">Home</NavButton>
-      <NavButton to="#tours">Tours</NavButton>
-      <NavButton to="/">About</NavButton>
-      <NavButton to="/">Help</NavButton>
+      <NavButton
+        to="top"
+        smooth={true}
+        duration={1}
+      >
+        Home
+      </NavButton>
+
+      <NavButton
+        to="tours"
+        smooth={true}
+        duration={1}
+      >
+        Tours
+      </NavButton>
+
+      <NavButton
+        to="/"
+        smooth={true}
+        duration={1}
+      >
+        About
+      </NavButton>
+
+      <NavButton
+        to="/"
+        smooth={true}
+        duration={500}
+      >
+        Help
+      </NavButton>
     </StyledNavbar>
   )
 }
