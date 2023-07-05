@@ -20,6 +20,10 @@ const primaryButtonStyles = css`
   &:hover {
     background-color: #fff;
   }
+
+  &:active {
+    background-color: #9f9f9f;
+  }
 `;
 
 const secondaryButtonStyles = css`
@@ -32,6 +36,10 @@ const secondaryButtonStyles = css`
   &:hover {
     background-color: #D3EAFF;
   }
+
+  &:active {
+    background-color: #dc6a9d;
+  }
 `;
 
 const tertiaryButtonStyles = css`
@@ -42,6 +50,10 @@ const tertiaryButtonStyles = css`
 
   &:hover {
     background-color: transparent;
+  }
+
+  &:active {
+    background-color: #ECECEC;
   }
 `;
 
