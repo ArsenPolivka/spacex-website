@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { atom, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 import { useQuery, gql } from "@apollo/client";
+
+import { currentTourState } from '../../recoil/atoms'
 
 import { Card } from "../atoms/Card";
 import { SwitcherButton } from "../atoms/SwitcherButton";
@@ -60,11 +62,6 @@ const ROCKETS_QUERY = gql`
     }
   }
 `;
-
-const currentTourState = atom({
-  key: "currentTour",
-  default: 0,
-});
 
 export const Tours = () => {
   const [currentGroup, setCurrentGroup] = useRecoilState(currentTourState);

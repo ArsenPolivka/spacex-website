@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
+import toast from "react-hot-toast";
 
 import { favoriteToursState } from '../../recoil/atoms';
 
 import { Button } from "./Button";
 
 import HeartIcon from "../icons/HeartIcon";
+import DeleteIcon from "../icons/DeleteIcon";
 
 const StyledCardWrapper = styled.div`
   display: flex;
@@ -62,16 +64,34 @@ const StyledButtons = styled.div`
 type CardProps = {
   rocket?: any;
   img?: string;
+  isFavorite?: boolean;
 }
 
 export const Card = ({
   rocket,
-  img
+  img,
+  isFavorite,
 }: CardProps) => {
   const [favoriteTours, setFavoriteTours] = useRecoilState(favoriteToursState);
 
+  const notifyError = () => toast.error('This tour is already in favorites!', {
+    position: 'top-right'
+  });
+  const notifySuccess = () => toast.success('Tour was added in Favorites successfully!', {
+    position: 'top-right'
+  });
+
   const addToFavorites = () => {
-    setFavoriteTours([...favoriteTours, rocket]);
+    if (favoriteTours.some(favorite => favorite.id === rocket.id)) {
+      notifyError();
+    } else {
+      setFavoriteTours([...favoriteTours, rocket]);
+      notifySuccess();
+    }
+  };
+
+  const removeFromFavorites = () => {
+    setFavoriteTours(favoriteTours.filter(favorite => favorite.id !== rocket.id));
   };
 
   return (
@@ -91,8 +111,8 @@ export const Card = ({
 
           <Button
             variant="tertiary"
-            icon={ <HeartIcon color="black" /> }
-            onClick={addToFavorites}
+            icon={ isFavorite ? <DeleteIcon color="black" /> : <HeartIcon color="black" /> }
+            onClick={ isFavorite ? removeFromFavorites : addToFavorites }
           />
         </StyledButtons>
       </StyledContentWrapper>

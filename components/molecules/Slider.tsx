@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { atom, useRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
+
+import { currentImageState } from '../../recoil/atoms';
 
 import { SwitcherButton } from "../atoms/SwitcherButton";
 import { ArrowButton } from "../atoms/ArrowButton";
@@ -69,11 +71,6 @@ const StyledDivWrapper = styled.div`
   margin-top: 43px;
   width: 100%;
 `;
-
-const currentImageState = atom({
-  key: "currentImage",
-  default: 0,
-});
 
 export const Slider = () => {
   const [currentImage, setCurrentImage] = useRecoilState(currentImageState);
