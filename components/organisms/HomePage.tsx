@@ -7,11 +7,11 @@ import { Tours } from "../molecules/Tours";
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <Header />
       <Slider />
       <Tours />
-    </div>
+    </>
   );
 };
 

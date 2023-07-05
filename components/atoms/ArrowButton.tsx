@@ -22,7 +22,7 @@ type ArrowButtonProps = {
   href: string;
 }
 
-export const ArrowButton = ({ href }:ArrowButtonProps) => {
+export const ArrowButton = ({ href }: ArrowButtonProps) => {
   return (
     <StyledLink href={href}>
       <StyledText>

@@ -59,7 +59,15 @@ const StyledButtons = styled.div`
   margin-top: auto;
 `;
 
-export const Card = ({ rocket, img }) => {
+type CardProps = {
+  rocket?: any;
+  img?: string;
+}
+
+export const Card = ({
+  rocket,
+  img
+}: CardProps) => {
   const [favoriteTours, setFavoriteTours] = useRecoilState(favoriteToursState);
 
   const addToFavorites = () => {
@@ -80,7 +88,12 @@ export const Card = ({ rocket, img }) => {
           <Button variant="primary">
             Buy
           </Button>
-          <Button variant="tertiary" icon={ <HeartIcon  color="black" /> } onClick={addToFavorites}/>
+
+          <Button
+            variant="tertiary"
+            icon={ <HeartIcon color="black" /> }
+            onClick={addToFavorites}
+          />
         </StyledButtons>
       </StyledContentWrapper>
     </StyledCardWrapper>

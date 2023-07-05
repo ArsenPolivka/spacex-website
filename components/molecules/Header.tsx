@@ -23,7 +23,13 @@ const StyledHeader = styled.header`
   z-index: 1;
 `;
 
-export const Header = () => {
+type HeaderProps = {
+  isFavorites?: boolean;
+}
+
+export const Header = ({
+  isFavorites,
+}: HeaderProps) => {
   return (
     <StyledHeader>
       <Logo />
@@ -31,8 +37,8 @@ export const Header = () => {
       <StyledButtonsDiv>
         <Button
           type='button'
-          variant="secondary"
-          icon={<HeartIcon color="black"/>}
+          variant={ isFavorites ? "secondaryActive" : "secondary" }
+          icon={<HeartIcon color={ isFavorites ? "white" : "black"} /> }
           href="/favorites"
         />
 
