@@ -29,6 +29,11 @@ const StyledClearAllButton = styled.button`
   background-color: transparent;
   border: 0;
   cursor: pointer;
+  transition: color 0.1s ease-in;
+
+  &:hover {
+    color: #b0b0b0;
+  }
 `;
 
 const StyledContentWrapper = styled.div`

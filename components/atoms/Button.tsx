@@ -18,7 +18,7 @@ const primaryButtonStyles = css`
   width: 100%;
 
   &:hover {
-    background-color: transparent;
+    background-color: #fff;
   }
 `;
 
