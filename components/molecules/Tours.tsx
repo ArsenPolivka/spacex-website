@@ -73,17 +73,24 @@ export const Tours = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  const groupedData = [];
-  for (let i = 0; i < data.rockets.length; i += 3) {
-    groupedData.push(data.rockets.slice(i, i + 3));
-  }
+  const groupedData = data.rockets;
+  const images = ["/images/card1.png", "/images/card2.png", "/images/card3.png"];
+
+  const getCards = () => {
+    const end = currentGroup + 3;
+    if (end <= groupedData.length) {
+      return groupedData.slice(currentGroup, end);
+    } else {
+      return [...groupedData.slice(currentGroup), ...groupedData.slice(0, end % groupedData.length)];
+    }
+  };
 
   const goToNextGroup = () => {
-    setCurrentGroup((prevGroup) => (prevGroup < groupedData.length - 1 ? prevGroup + 1 : prevGroup));
+    setCurrentGroup((prevGroup) => (prevGroup + 1) % groupedData.length);
   };
 
   const goToPreviousGroup = () => {
-    setCurrentGroup((prevGroup) => (prevGroup > 0 ? prevGroup - 1 : prevGroup));
+    setCurrentGroup((prevGroup) => (prevGroup + groupedData.length - 1) % groupedData.length);
   };
 
   return (
@@ -118,10 +125,11 @@ export const Tours = () => {
       </StyledHeadingWrapper>
 
       <StyledCardWrapper>
-        {groupedData[currentGroup].map((rocket) => (
+        {getCards().map((rocket, index) => (
           <Card
             key={rocket.id}
             rocket={rocket}
+            img={images[(currentGroup + index) % images.length]}
           />
         ))}
       </StyledCardWrapper>
@@ -129,10 +137,10 @@ export const Tours = () => {
       <StyledSwitchBar>
         {groupedData.map((_, index) => (
           <SwitcherButton
-          key={index}
-          onClick={() => setCurrentGroup(index)}
-          isActive={currentGroup === index}
-          color="black"
+            key={index}
+            onClick={() => setCurrentGroup(index)}
+            isActive={currentGroup === index}
+            color="black"
           />
         ))}
       </StyledSwitchBar>

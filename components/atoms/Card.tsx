@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { useRecoilState } from "recoil";
+
+import { favoriteToursState } from '../../recoil/atoms';
 
 import { Button } from "./Button";
 
 import HeartIcon from "../icons/HeartIcon";
-import {useRecoilState} from "recoil";
-import { favoriteToursState } from '../../recoil/atoms';
 
 const StyledCardWrapper = styled.div`
   display: flex;
@@ -58,7 +59,7 @@ const StyledButtons = styled.div`
   margin-top: auto;
 `;
 
-export const Card = ({ rocket }) => {
+export const Card = ({ rocket, img }) => {
   const [favoriteTours, setFavoriteTours] = useRecoilState(favoriteToursState);
 
   const addToFavorites = () => {
@@ -67,7 +68,7 @@ export const Card = ({ rocket }) => {
 
   return (
     <StyledCardWrapper>
-      <StyledImage src="/images/card1.png" alt="card1"/>
+      <StyledImage src={img} alt="card1"/>
       <StyledContentWrapper>
         <StyledDescriptionWrapper>
           <StyledTitle>{rocket.name}</StyledTitle>
