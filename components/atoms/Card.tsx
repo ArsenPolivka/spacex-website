@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
+import toast from "react-hot-toast";
 
 import { favoriteToursState } from '../../recoil/atoms';
 
@@ -73,8 +74,16 @@ export const Card = ({
 }: CardProps) => {
   const [favoriteTours, setFavoriteTours] = useRecoilState(favoriteToursState);
 
+  const notifyError = () => toast.error('This tour is already in favorites!', {
+    position: 'top-right'
+  });
+
   const addToFavorites = () => {
-    setFavoriteTours([...favoriteTours, rocket]);
+    if (favoriteTours.some(favorite => favorite.id === rocket.id)) {
+      notifyError();
+    } else {
+      setFavoriteTours([...favoriteTours, rocket]);
+    }
   };
 
   const removeFromFavorites = () => {

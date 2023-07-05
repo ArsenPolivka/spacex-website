@@ -2,6 +2,7 @@ import React from 'react';
 import { ApolloProvider } from '@apollo/client';
 import { RecoilRoot } from 'recoil';
 import { createGlobalStyle } from 'styled-components';
+import { Toaster } from "react-hot-toast";
 
 import client from '../../apollo/client';
 
@@ -42,6 +43,7 @@ const App = ({ Component, pageProps }) => {
       <RecoilRoot>
         <GlobalStyle />
         <Component {...pageProps} />
+        <Toaster />
       </RecoilRoot>
     </ApolloProvider>
   );
