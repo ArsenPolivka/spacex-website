@@ -77,12 +77,16 @@ export const Card = ({
   const notifyError = () => toast.error('This tour is already in favorites!', {
     position: 'top-right'
   });
+  const notifySuccess = () => toast.success('Tour was added in Favorites successfully!', {
+    position: 'top-right'
+  });
 
   const addToFavorites = () => {
     if (favoriteTours.some(favorite => favorite.id === rocket.id)) {
       notifyError();
     } else {
       setFavoriteTours([...favoriteTours, rocket]);
+      notifySuccess();
     }
   };
 
