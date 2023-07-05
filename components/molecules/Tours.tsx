@@ -70,6 +70,7 @@ export const Tours = () => {
 
   const getCards = () => {
     const end = currentGroup + 3;
+
     if (end <= groupedData.length) {
       return groupedData.slice(currentGroup, end);
     } else {
@@ -119,6 +120,7 @@ export const Tours = () => {
       <StyledCardWrapper>
         {getCards().map((rocket) => {
           const originalIndex = data.rockets.findIndex(item => item.id === rocket.id);
+
           return (
             <Card
               key={rocket.id}
