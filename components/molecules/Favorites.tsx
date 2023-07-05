@@ -60,6 +60,7 @@ export const Favorites = () => {
         >
           Clear all
         </StyledClearAllButton>
+
         { favoriteTours.length !== 0 ? (
           favoriteTours.length > 2 ? (
               <StyledCardList>

@@ -33,7 +33,9 @@ export const Header = ({
   return (
     <StyledHeader>
       <Logo />
+
       <Navigation />
+
       <StyledButtonsDiv>
         <Button
           type='button'

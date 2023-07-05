@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { useRecoilState } from "recoil";
-import { useQuery, gql } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
+import { ROCKETS_QUERY } from "../../apollo/client";
 import { currentTourState } from '../../recoil/atoms'
 
 import { Card } from "../atoms/Card";
@@ -51,16 +52,6 @@ const StyledHeadingWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-
-const ROCKETS_QUERY = gql`
-  query GetRockets {
-    rockets {
-      id
-      description
-      name
-    }
-  }
 `;
 
 export const Tours = () => {

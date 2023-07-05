@@ -28,6 +28,7 @@ export const ArrowButton = ({ href }: ArrowButtonProps) => {
       <StyledText>
         Explore tours
       </StyledText>
+
       <ArrowIcon color="white"/>
     </StyledLink>
   )
