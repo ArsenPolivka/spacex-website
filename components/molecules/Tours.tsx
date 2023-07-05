@@ -62,10 +62,15 @@ export const Tours = () => {
   if (error) return <p>Error :(</p>;
 
   const groupedData = data.rockets;
-  const images = ["/images/card1.png", "/images/card2.png", "/images/card3.png"];
+  const images = [];
+
+  [1, 2, 3].forEach((num) => {
+    images.push(`/images/card${num}.png`);
+  });
 
   const getCards = () => {
     const end = currentGroup + 3;
+
     if (end <= groupedData.length) {
       return groupedData.slice(currentGroup, end);
     } else {
@@ -113,13 +118,17 @@ export const Tours = () => {
       </StyledHeadingWrapper>
 
       <StyledCardWrapper>
-        {getCards().map((rocket, index) => (
-          <Card
-            key={rocket.id}
-            rocket={rocket}
-            img={images[(currentGroup + index) % images.length]}
-          />
-        ))}
+        {getCards().map((rocket) => {
+          const originalIndex = data.rockets.findIndex(item => item.id === rocket.id);
+
+          return (
+            <Card
+              key={rocket.id}
+              rocket={rocket}
+              img={images[originalIndex % images.length]}
+            />
+          )
+        })}
       </StyledCardWrapper>
 
       <StyledSwitchBar>
