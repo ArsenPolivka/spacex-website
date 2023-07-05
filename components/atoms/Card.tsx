@@ -6,6 +6,7 @@ import { favoriteToursState } from '../../recoil/atoms';
 import { Button } from "./Button";
 
 import HeartIcon from "../icons/HeartIcon";
+import DeleteIcon from "../icons/DeleteIcon";
 
 const StyledCardWrapper = styled.div`
   display: flex;
@@ -62,16 +63,22 @@ const StyledButtons = styled.div`
 type CardProps = {
   rocket?: any;
   img?: string;
+  isFavorite?: boolean;
 }
 
 export const Card = ({
   rocket,
-  img
+  img,
+  isFavorite,
 }: CardProps) => {
   const [favoriteTours, setFavoriteTours] = useRecoilState(favoriteToursState);
 
   const addToFavorites = () => {
     setFavoriteTours([...favoriteTours, rocket]);
+  };
+
+  const removeFromFavorites = () => {
+    setFavoriteTours(favoriteTours.filter(favorite => favorite.id !== rocket.id));
   };
 
   return (
@@ -91,8 +98,8 @@ export const Card = ({
 
           <Button
             variant="tertiary"
-            icon={ <HeartIcon color="black" /> }
-            onClick={addToFavorites}
+            icon={ isFavorite ? <DeleteIcon color="black" /> : <HeartIcon color="black" /> }
+            onClick={ isFavorite ? removeFromFavorites : addToFavorites }
           />
         </StyledButtons>
       </StyledContentWrapper>
