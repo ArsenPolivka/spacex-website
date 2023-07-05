@@ -80,7 +80,7 @@ export const Slider = () => {
   };
 
   return (
-    <StyledWrapperDiv>
+    <StyledWrapperDiv id="top">
       <StyledImageDiv>
         <StyledImage
           src={`/images/${currentImage}.png`}

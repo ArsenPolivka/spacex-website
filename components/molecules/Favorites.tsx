@@ -87,7 +87,7 @@ export const Favorites = () => {
             )
         ) : (
           <StyledWarning>
-            Favorites list is empty...
+            Favourites list is empty...
           </StyledWarning>
         )}
       </StyledContentWrapper>

@@ -93,7 +93,10 @@ export const Card = ({
 
   return (
     <StyledCardWrapper>
-      <StyledImage src={img} alt="card1"/>
+      <StyledImage
+        src={img}
+        alt="card1"
+      />
       <StyledContentWrapper>
         <StyledDescriptionWrapper>
           <StyledTitle>
