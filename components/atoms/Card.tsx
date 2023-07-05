@@ -13,7 +13,7 @@ const StyledCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 411px;
-  height: 830px;
+  height: 840px;
   border: 1px solid #D3EAFF;
 `;
 
