@@ -59,7 +59,7 @@ const StyledButtons = styled.div`
 
 type CardProps = {
   rocket?: any;
-  img?: any;
+  img?: string;
   isFavorite?: boolean;
 }
 
